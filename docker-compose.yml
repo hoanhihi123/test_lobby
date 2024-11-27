@@ -1,4 +1,4 @@
-version: '3'
+
 services:
   postgres:
     command: postgres -c shared_preload_libraries=pg_stat_statements -c pg_stat_statements.track=all
@@ -18,7 +18,7 @@ services:
 
   nakama:
     build: .
-    container_name: lobby
+    container_name: shangame_container
     depends_on:
       - postgres
     entrypoint:
