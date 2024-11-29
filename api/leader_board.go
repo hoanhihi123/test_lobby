@@ -42,7 +42,7 @@ func InitLeaderBoard(ctx context.Context, logger runtime.Logger, nk runtime.Naka
 		operator := "incr"
 		reset := constant.RESET_SCHEDULER_LEADER_BOARD
 		metadata := map[string]interface{}{}
-		if err := nk.LeaderboardCreate(ctx, game.Code, authoritative, sort, operator, reset, metadata, true); err != nil {
+		if err := nk.LeaderboardCreate(ctx, game.Code, authoritative, sort, operator, reset, metadata); err != nil {
 			logger.Debug("Can not create leaderboard " + game.Code)
 		}
 	}

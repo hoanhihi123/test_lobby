@@ -1,7 +1,7 @@
 PROJECT_NAME=github.com/nakamaFramework/cgb-lobby-module
 APP_NAME=lobby.so
-APP_PATH=/home/hoan/Documents/create_folder/test_lobby
-NAKAMA_VER=3.25.0
+APP_PATH=/home/hoan/Documents/lobby_2/test_lobby
+NAKAMA_VER=3.19.0
 
 update-submodule-dev:
 	git checkout develop && git pull origin develop
@@ -20,7 +20,7 @@ build:
 	./sync_pkg_3.11.sh
 	go mod tidy
 	go mod vendor
-	docker run --rm -w "/app" -v "$(APP_PATH):/app" heroiclabs/nakama-pluginbuilder:3.25.0 build -buildvcs=false --trimpath --buildmode=plugin -o ./bin/${APP_NAME}
+	docker run --rm -w "/app" -v "$(APP_PATH):/app" heroiclabs/nakama-pluginbuilder:3.19.0 build -buildvcs=false --trimpath --buildmode=plugin -o ./bin/${APP_NAME}
 
 
 build-cmd:
